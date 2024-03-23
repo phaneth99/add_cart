@@ -50,9 +50,7 @@ if(isset($_POST['update_product'])){
       }
    }
 ?>
-
     <div class="container">
-
 
         <div class="admin_product_form_container centered">
 
@@ -62,7 +60,6 @@ if(isset($_POST['update_product'])){
       while($row = mysqli_fetch_assoc($select)){
 
    ?>
-
             <form action="" method="post" enctype="multipart/form-data">
                 <h3 class="header">update the product</h3>
                 <input type="text" class="box" name="product_name" value="<?php echo $row['name']; ?>"
@@ -73,13 +70,11 @@ if(isset($_POST['update_product'])){
                 <input type="submit" value="update product" name="update_product" class="btn">
                 <a href="index.php" class="btn">go back!</a>
             </form>
-
-
         </div>
-        cl
     </div>
 
     <?php }; ?>
+
 </body>
 
 </html>

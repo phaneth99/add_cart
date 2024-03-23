@@ -1,5 +1,13 @@
 <?php
 @include 'config.php';
+include'connection.php';
+
+if(isset($_COOKIE['user_id'])){
+    $user_id = $_COOKIE['user_id'];
+}else{
+    $user_id= '';
+    header('Location:users/login.php');
+}
 
 if(isset($_POST['add_product'])){
     
@@ -29,11 +37,6 @@ if(isset($_POST['add_product'])){
     }
 };
 
-if(isset($_GET['delete'])){
-    $id = $_GET['delete'];
-    mysqli_query($conn,"DELETE FROM products WHERE  id = $id");
-    header('location:indexgot.php');
-}
 
 ?>
 
@@ -60,7 +63,11 @@ if(isset($message)){
 ?>
 
 <body>
+    <div class="btn-back">
+        <a href="./users/home.php" class=" btn">Go Back!</a>
+    </div>
     <div class="container">
+
         <div class="admin_product_form_container">
 
             <form action="<?php  $_SERVER['PHP_SELF']?>" method="post" enctype="multipart/form-data">
@@ -97,9 +104,9 @@ if(isset($message)){
                 <td><?php echo $row['name'];?></td>
                 <td><?php echo $row['price']; ?>$</td>
                 <td>
-                    <a href="admin_update.php?edit=<?php echo $row['id']; ?>" class="btn"><i
-                            class=" fas fa-edit"></i>edit</a>
-                    <a href="index.php" class="btn"><i class=" fas fa-trash"></i>delete</a>
+                    <a href="update.php?edit=<?php echo $row['id']; ?>" class="btn"><i class=" fas fa-edit"></i>edit</a>
+                    <a onclick="confirmDelete(id=<?php echo $row['id']?>)" href="index.php" class="btn"><i
+                            class=" fas fa-trash"></i>delete</a>
                 </td>
 
             </tr>
@@ -107,5 +114,13 @@ if(isset($message)){
         </table>
     </div>
 </body>
+
+<script>
+function confirmDelete(id) {
+    if (confirm(" Are you sure you want to delete this item?")) {
+        window.location.href = 'delete.php?delete=' + id;
+    }
+}
+</script>
 
 </html>

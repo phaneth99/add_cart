@@ -1,0 +1,181 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
+
+:root {
+  --green: #27ae60;
+  --red: #e74c3c;
+  --light-color: #666;
+  --black: #333;
+  --white: #fff;
+  --bg-light: #eee;
+  --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
+  --border: 0.2rem solid var(--black);
+}
+
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+html {
+  overflow-x: hidden;
+  font-size: 62.5%;
+}
+/* Global */
+section {
+  padding: 2rem;
+  margin: 0 auto;
+  max-width: 120rem; /*only 1200px of vertical*/
+}
+/* message */
+
+.message {
+  position: sticky;
+  top: 1.5rem;
+  border-radius: 0.5rem;
+  background-color: var(--white);
+  box-shadow: var(--box-shadow);
+  border: var(--border);
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  z-index: 1000;
+  font-size: 2rem;
+  font-weight: 400;
+  max-width: 120rem;
+  animation: fadeIn 0.4s cubic-bezier(0.3, 1.41, 0.4, 1.46);
+}
+@keyframes fadeIn {
+  0% {
+    transform: translateY(-10px) scale(0.7);
+  }
+}
+
+.message span {
+  font-size: 2rem;
+  color: var(--black);
+}
+
+.message i {
+  color: var(--red);
+  font-size: 2.5rem;
+  transition: all 0.3s ease;
+}
+.message i:hover {
+  color: var(--black);
+}
+/* btn */
+.btn {
+  display: inline-block;
+  width: 100%;
+  margin-top: 1rem;
+  padding: 1.2rem 3rem;
+  font-size: 2rem;
+  font-weight: 400;
+  color: var(--white);
+  border-radius: 0.5rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-delete {
+  background-color: var(--red);
+}
+
+.btn-primary {
+  background-color: var(--green);
+}
+.btn-primary:hover,
+.btn-delete:hover {
+  background-color: var(--light-color);
+  color: var(--black);
+}
+/* form container */
+.form-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; /* container has height 100% of horizontal*/
+  padding-bottom: 6rem;
+}
+
+.form-container form {
+  width: 50rem;
+  background-color: var(--white);
+  border: 0.5rem;
+  border: var(--border);
+  box-shadow: var(--box-shadow);
+  padding: 2rem;
+  text-align: center;
+}
+
+.form-container h3 {
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+  color: var(--black);
+}
+
+.form-container form .box {
+  margin: 0.75rem 0;
+  width: 100%;
+  border-radius: 0.5rem;
+  background-color: var(--bg-light);
+  border: var(--border);
+  font-size: 2rem;
+  text-transform: lowercase;
+  padding: 1.4rem;
+  color: var(--black);
+}
+.form-container form p {
+  margin-top: 2rem;
+  font-size: 2rem;
+  text-transform: none;
+}
+.form-container form p > a {
+  color: var(--red);
+  transition: all 0.6s ease;
+}
+.form-container form p > a:hover {
+  color: var(--black);
+  text-decoration: underline;
+}
+
+/* Cokkie */
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; /* container has height 100% of horizontal*/
+  padding-bottom: 6rem;
+}
+
+.content .box {
+  width: 50rem;
+  background-color: var(--white);
+  border: 0.5rem;
+  border: var(--border);
+  box-shadow: var(--box-shadow);
+  padding: 2rem;
+  text-align: center;
+}
+
+.content .box h3 {
+  font-size: 2.5rem;
+  color: var(--black);
+  margin-bottom: 1rem;
+}
+.content .box span {
+  color: var(--green);
+}
+.content .box .btn-flex {
+  display: flex;
+  gap: 1rem;
+}
